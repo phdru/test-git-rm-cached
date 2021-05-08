@@ -1,20 +1,16 @@
 #! /bin/sh
 
-echo foo >foo
-git add foo
-git commit -m 'Add foo in master'
-
-git checkout -b test
-echo bar >bar
-git add bar
-git commit -m 'Add bar in test branch'
-
+echo a > a; git add .; git commit -m'a'
+git checkout -b br
+echo b > b; git add .; git commit -m'b'
 git checkout master
-git rm --cached foo
-git commit -m 'Test rm'
-
-git checkout -f test # `-f` because `foo` is untracked in `master` and tracked in `test`
+echo c > c; git add .; git commit -m'c'
 ls
-
+git rm --cached c
+git commit -m'rm c'
+echo c > .gitignore
+ls
+git checkout br
+ls
 git checkout master
-ls # Oops, where is foo?!
+ls
