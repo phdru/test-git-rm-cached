@@ -8,9 +8,14 @@ echo c > c; git add .; git commit -m'c'
 ls
 git rm --cached c
 git commit -m'rm c'
-echo c > .gitignore
 ls
 git checkout br
+ls
+git checkout master
+ls
+
+git checkout br
+echo c > c; git add .; git commit -m'c'
 ls
 git checkout master
 ls
