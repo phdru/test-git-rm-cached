@@ -8,6 +8,7 @@ echo c > c; git add .; git commit -m'c'
 ls
 git rm --cached c
 git commit -m'rm c'
+echo c > .gitignore; git add .gitignore; git commit -m.gitignore
 ls
 git checkout br
 ls
